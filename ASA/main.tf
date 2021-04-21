@@ -1,11 +1,11 @@
 terraform {
     backend "azurerm" {
         # resource_group_name     = "vmss-rs-rg"
-        storage_account_name    = "rs47704sa"
-        container_name          = "state-container"
-        key                     = "terraform.tfstate"
+        # storage_account_name    = "rs47704sa"
+        # container_name          = "state-container"
+        # key                     = "terraform.tfstate"
 
-        sas_token               = "?sv=2017-07-29&ss=b&srt=sco&sp=rwdlac&se=2021-04-23T08:32:23Z&st=2021-04-21T08:32:23Z&spr=https&sig=NmaV%2BjXuv3oiv0KYiPu2VpINX9mRrtnO%2Bb%2BDc27bMwE%3D"
+        # sas_token               = "?sv=2017-07-29&ss=b&srt=sco&sp=rwdlac&se=2021-04-23T08:32:23Z&st=2021-04-21T08:32:23Z&spr=https&sig=NmaV%2BjXuv3oiv0KYiPu2VpINX9mRrtnO%2Bb%2BDc27bMwE%3D"
         # use_msi                 = true
 
         # subscription_id         = "882c09dc-5677-4228-82e4-8bb80de844cd"

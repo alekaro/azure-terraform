@@ -55,10 +55,10 @@ data "template_file" "linux-vm-cloud-init" {
 data "terraform_remote_state" "state" {
   backend = "azurerm"
   config = {
-    storage_account_name    = "rs47704sa"
+    storage_account_name    = "rs62598sa"
     container_name          = "state-container"
     key                     = "terraform.tfstate"
-    sas_token               = "?sv=2017-07-29&ss=b&srt=sco&sp=rwdlac&se=2021-04-23T08:32:23Z&st=2021-04-21T08:32:23Z&spr=https&sig=NmaV%2BjXuv3oiv0KYiPu2VpINX9mRrtnO%2Bb%2BDc27bMwE%3D"
+    sas_token               = "?sv=2017-07-29&ss=b&srt=sco&sp=rwdlac&se=2021-04-23T11:22:50Z&st=2021-04-21T11:22:50Z&spr=https&sig=NIHDCBCKMwr4tCX0Fhqz65Ru1c2J%2B77RxE9ccfzdbO8%3D"
   }
 }
 
@@ -315,14 +315,6 @@ resource "azurerm_monitor_autoscale_setting" "rules" {
       }
     }
   }
-
-#   notification {
-#     email {
-#       send_to_subscription_administrator    = true
-#       send_to_subscription_co_administrator = true
-#       custom_emails                         = ["admin@contoso.com"]
-#     }
-#   }
 }
 
 # Application gateway metrics:
@@ -336,30 +328,6 @@ resource "azurerm_monitor_autoscale_setting" "rules" {
 #   "Total Requests"
 #   "Unhealthy Host Count"
 
-
-# # --------------- Creating ASA (Azure Storage Account) ---------------
-# resource "random_integer" "sa_id" {
-#   min = 10000
-#   max = 99999
-# }
-
-# resource "azurerm_storage_account" "main" {
-#   name                     = "${var.prefix}${random_integer.sa_id.result}sa"
-#   resource_group_name      = var.resource_group_name
-#   location                 = var.location
-#   account_tier             = "Standard"
-#   account_replication_type = "LRS"
-
-#   tags = {
-#     environment = "dev"
-#   }
-# }
-
-# resource "azurerm_storage_container" "main" {
-#   name                  = "${var.prefix}${random_integer.sa_id.result}ct"
-#   storage_account_name  = azurerm_storage_account.main.name
-#   container_access_type = "private"
-# }
 
 ########################################################################
 # ROLE DEFINITIONS
